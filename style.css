@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'PvZ2Regular';
+  src: url('PvZ2 Regular By Beast and MF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: url('bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'PvZ2Regular', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay with 70% opacity */
+  z-index: -1; /* Ensures it's behind the content */
+}
+h1 {
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.box {
+  background-color: #a86e42; /* Adds some transparency */
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  color: #ffffff; /* Ensures text is visible */
+  position: relative;
+  overflow: hidden;
+
+  /* Add the dark overlay as a border */
+  border: 10px solid rgba(0, 0, 0, 0.7); /* Black border with 70% opacity */
+  border-radius: 15px; /* Rounded corners for the border */
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: -10px; right: -10px; bottom: -10px; left: -10px; /* Adjust spacing as needed */
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay with 70% opacity */
+  border-radius: 5px; /* Rounded corners for the inner content area */
+  z-index: -1; /* Ensures it's behind the content */
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: -2px; right: -2px; bottom: -2px; left: -2px;
+  background: linear-gradient(225deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  border-radius: 15px;
+  z-index: -1;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.grid-item {
+  color:#312300;
+  background-color: #e2dabd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item img {
+  max-height: 300px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.grid-item p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #332400;
+}
+
+.download-button, .info-button {
+  /* Shared button styles */
+  font-family: 'PvZ2Regular', sans-serif;
+  color: whitesmoke;
+  padding: 10px 20px; /* Adjust padding to increase space inside the buttons */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  text-shadow: 1px 1px #000000;
+  border: 3px solid white;
+  margin: 20px 10px; /* Increase top/bottom margin to move buttons down, adjust left/right for spacing */
+}
+.download-button {
+  background: linear-gradient(to top, #493464, #7453c5);
+}
+
+.download-button:hover {
+  background: #7453c5; /* Lighter purple for hover effect */
+  transform: translateY(-2px); /* Button press effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.info-button {
+  background: linear-gradient(to top, #53311c, #c38047);
+}
+
+.info-button:hover {
+  background: #c38047; /* Lighter brown for hover effect */
+  transform: translateY(-2px); /* Button press effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
